@@ -20,7 +20,7 @@ what I expected, and what actually happened.
 | 9 | Weekend dips | Zoom into one normal month with Subway selected | Ridership visibly drops every Sat/Sun (something I noticed while building, so if it's gone my dates are misaligned) | The weekly dip pattern shows clearly across every month. I hovered the lowest point in Dec 2022 and the tooltip read Sunday, December 25, 2022 with ridership around 1M, so the dips land exactly on weekends (and that one was extra deep because it was Christmas) | Pass |
 | 10 | The COVID drop | Look at 2020 with no filters | The huge April 2020 collapse should be obvious in the line chart | The drop is right there at the left edge of the line chart, ridership falls off a cliff in spring 2020. I also hovered the earliest points and the tooltip confirmed dates back to March 1, 2020 | Pass |
 | 11 | Bar chart math | Pick one mode and average its daily ridership from the raw data myself | The bar chart's average matches my hand calculation | Averaged Subway's daily counts in Excel (Count column only this time) and got 2,776,896.9, and the Subway bar's tooltip showed the matching ~2.78M value | Pass |
-| 12 | README check | Go through my README like a stranger would | Screenshots load, the data source link works, and everything I claim matches what the dashboard shows | | |
+| 12 | README check | Go through my README like a stranger would | Screenshots load, the data source link works, and everything I claim matches what the dashboard shows | Opened the repo in an incognito window and read it fresh: both screenshots loaded, the data.ny.gov link worked, and everything the README describes matches what the dashboard actually does | Pass |
 
 ## Issues I Found
 
@@ -29,7 +29,7 @@ what I expected, and what actually happened.
 | 1 | Found while checking test 1 | The Year slicer only displayed 6 of the 7 years, so one year was always hidden (at first I thought 2020 was missing from my data entirely) | Medium, a user couldn't filter to the 2020 COVID period | Checked the Filters pane first: no filter was excluding 2020 and all 7 years existed in the field, so the data was fine. Turned out the slicer box was just too short to show the full list. Increased the slicer height so all years 2020-2026 display at once, then re-uploaded the .pbix and fresh screenshots | Yes, selected 2020 and the visuals correctly filtered to the March-Dec 2020 data |
 ## Results
 
-- Passed: __ out of 12
-- Issues found and fixed: __
+- Passed: 12 out of 12
+- Issues found and fixed: 1 (the Year slicer was hiding one year because the box was too short to show the full list)
 
-Even though this was a personal project, testing it this way helped me identify issues that weren't obvious from the dashboard alone. It also gave me practical experience with the UAT process used on professional project teams.
+Testing like this caught a real bug I would have missed just eyeballing the dashboard (the hidden year in the slicer), and taught me something less obvious: when my first hand-calculation didn't match the KPI, the dashboard turned out to be right and my Excel check was wrong. Sometimes the test is broken, not the system.
