@@ -31,3 +31,9 @@ into clear reports and charts that someone could actually use to answer question
 ## Data Source
 [MTA Daily Ridership and Traffic: Beginning 2020](https://data.ny.gov) — 
 New York State Open Data, updated daily
+
+## Testing
+I validated the dashboard against a 12-case UAT plan covering slicer
+interactions, KPI accuracy against the source data, and data quality
+checks. All 12 passed, and I found and fixed one real display bug along
+the way. See [uat-test-plan.md](uat-test-plan.md).
